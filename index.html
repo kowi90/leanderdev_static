@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leanderdev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+    <style>
+        *{
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            margin: 0px;
+        }
+        .overlay {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #314755;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to bottom, #26a0da, #314755);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to bottom, #26a0da, #314755); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background-size: 130% 130%;
+            animation: bg-anim 5s ease infinite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .title {
+            font-size: 55px;
+            text-align: center;
+            opacity: 0.7;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container > div {
+            display: flex;
+        }
+        .container > img {
+            opacity: 0.4;
+            height: 200px;
+            width: 200px;
+            align-items: center;
+            transition: 0.3s all;
+        }
+
+        .container > img:hover + .camera{
+            opacity: 1;
+            left: -200px;
+            transition: 0.3s all;
+        }
+        .button  {
+            font-size: 26px;
+            color: white;
+            opacity: 0.7;
+            text-align: center;
+            transition: 0.3s all;
+            border: 2px solid transparent;
+            padding: 5px 10px;
+            margin: 0px 5px;
+        }
+
+        .button:hover {
+            border: 2px solid white;
+            opacity: 1;
+            cursor: pointer;
+        }
+        .button > svg {
+            margin-right: 7px;
+            font-size: 30px;
+        }
+        .img{
+            position: absolute;
+            opacity: 0.06;
+            filter: grayscale(1);
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .img > img {
+            width: 100%;min-width: 100%;
+            height: 100%;
+        }
+
+        @keyframes bg-anim {
+            0%{background-position:51% 0%}
+            50%{background-position:50% 100%}
+            100%{background-position:51% 0%}
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="title">
+            Leanderdev
+        </div>
+        <div class="container">
+            <img src="./keyboard.svg" alt="">
+            <div>
+                <a href="http://leanderdev.ddns.net/cameras">
+                    <div class="button"><i class="fas fa-camera"></i>Camera</div
+                ></a>
+                <a href="http://leanderdev.ddns.net/tempview/build">
+                <div class="button"><i class="fas fa-thermometer-half"></i>Temperature</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="img">
+        <img src="./test.jpg" alt="">
+    </div>
+</body>
+</html>
